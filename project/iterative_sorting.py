@@ -46,6 +46,17 @@ def insertion_sort( arr ):
 
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort( arr ):
+    swaped = True
+    while swaped:
+        for i in range(len(arr)-1):
+            swaped = False
+            if arr[i] > arr[i+1]:
+                swaped = True
+                temp = arr[i-1]
+                arr[i-1] = arr[i]
+                arr[i] = temp
+
+
 
     return arr
 
