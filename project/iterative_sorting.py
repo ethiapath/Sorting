@@ -1,4 +1,13 @@
 # Complete the selection_sort() function below in class with your instructor
+
+
+def swap(arr, a, b):
+    temp = arr[a]
+    arr[a] = arr[b]
+    arr[b] = temp
+
+
+
 def selection_sort( arr ):
     # loop through n-1 elements
     if len(arr) == 0:
@@ -14,12 +23,12 @@ def selection_sort( arr ):
                 smallest_index = j
 
         # TO-DO: swap
-        temp = arr[smallest_index]
-        arr[smallest_index] = arr[cur_index]
-        arr[cur_index] = temp
+        swap(arr, smallest_index, cur_index)
+        #temp = arr[smallest_index]
+        #arr[smallest_index] = arr[cur_index]
+        #arr[cur_index] = temp
 
     return arr
-
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort( arr ):
@@ -34,9 +43,10 @@ def insertion_sort( arr ):
         temp = arr[i]
         j = i
         while j > 0 and arr[j-1] > arr[j]:
-            swap = arr[j-1]
-            arr[j-1] = arr[j]
-            arr[j] = swap
+            swap(arr, j-1, j)
+            #swap = arr[j-1]
+            #arr[j-1] = arr[j]
+            #arr[j] = swap
             j = j-1
 
     return arr
@@ -48,10 +58,11 @@ def bubble_sort( arr ):
         swaped = False
         for i in range(len(arr)-1):
             if arr[i] > arr[i+1]:
+                swap(arr, i, i+1)
                 swaped = True
-                temp = arr[i+1]
-                arr[i+1] = arr[i]
-                arr[i] = temp
+                #temp = arr[i+1]
+                #arr[i+1] = arr[i]
+                #arr[i] = temp
     return arr
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
