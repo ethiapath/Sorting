@@ -39,10 +39,7 @@ def insertion_sort( arr ):
             arr[j] = swap
             j = j-1
 
-
-
     return arr
-
 
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort( arr ):

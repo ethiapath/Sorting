@@ -72,7 +72,6 @@ class SortingTest(unittest.TestCase):
     #     self.assertEqual(count_sort(arr3), "Error, negative numbers not allowed in Count Sort")
 
 
-    '''
     def test_merge(self):
         arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
         arr2 = []
@@ -83,7 +82,6 @@ class SortingTest(unittest.TestCase):
         self.assertEqual(merge_sort(arr2), [])
         self.assertEqual(merge_sort(arr3), [2])
         self.assertEqual(merge_sort(arr4), [0,1,2,3,4,5])
-    '''
 
 
     # def test_merge_in_place(self):
@@ -98,16 +96,14 @@ class SortingTest(unittest.TestCase):
     #     self.assertEqual(merge_sort_in_place(arr4, 0, len(arr4)-1), [0,1,2,3,4,5])
 
 
-    '''
     def test_quick(self):
         arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
         arr2 = []
-        arr3 = [0, 1, 2, 3, 4, 5] 
+        arr3 = [0, 1, 2, 3, 4, 5]
 
         self.assertEqual(quick_sort(arr1, 0, len(arr1)-1), [0,1,2,3,4,5,6,7,8,9])
         self.assertEqual(quick_sort(arr2, 0, len(arr2)-1), [])
         self.assertEqual(quick_sort(arr3, 0, len(arr3)-1), [0,1,2,3,4,5])
-    '''
 
 
 if __name__ == '__main__':
