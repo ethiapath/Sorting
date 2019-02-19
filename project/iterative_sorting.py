@@ -48,19 +48,14 @@ def insertion_sort( arr ):
 def bubble_sort( arr ):
     swaped = True
     while swaped:
+        swaped = False
         for i in range(len(arr)-1):
-            swaped = False
             if arr[i] > arr[i+1]:
                 swaped = True
-                temp = arr[i-1]
-                arr[i-1] = arr[i]
+                temp = arr[i+1]
+                arr[i+1] = arr[i]
                 arr[i] = temp
-
-
-
     return arr
-
-
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
 
