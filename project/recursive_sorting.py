@@ -48,21 +48,31 @@ def swap(arr, a, b):
 
 # TO-DO: implement the Quick Sort function below USING RECURSION
 def quick_sort( arr, low, high ):
-    pivot = 0 #len(arr) // 2
-    # 1. Select a pivot. Often times this is the first or last element in a set. It can also be the middle.
-    # 2. Move all elements smaller than the pivot to the left. 
-    store_i = pivot + 1
-    for i in range(pivot+1, len(arr)):
-        if arr[i] < arr[pivot]:
-            swap(arr, i, pivot)
-            store_i = store_i + 1
-        swap(arr, store_i, pivot-1)
-
-    # 3. Move all elements greater than the pivot to the right.
-    # 4. While LHS and RHS are greater than 1, repeat steps 1-3 on each side.
+    # base case
+    if len(arr) < 2:
+        return arr
+    else:
+        # 1. Select a pivot. Often times this is the first or last element in a set. It can also be the middle.
+        pivot = 0 #len(arr) // 2
+        # 2. Move all elements smaller than the pivot to the left. 
+        smaller = []
+        for s in arr[1:]:
+            if s < arr[pivot]:
+                smaller.append(s)
+        # 3. Move all elements greater than the pivot to the right.
+        greater = []
+        for g in arr[1:]:
+            if g > arr[pivot]:
+                greater.append(g)
+            
+        # 4. While LHS and RHS are greater than 1, repeat steps 1-3 on each side.
+        return quick_sort(smaller, 0, pivot-1) + [arr[pivot]] + quick_sort(greater, pivot+1, len(greater)-1)
 
     return arr
 
+arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+
+print(quick_sort(arr1, 0, len(arr1)))
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
